@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+География
+{% endblock %}
+
+{% block content %}
+{% include 'nav.html' %}
+<table class="table table-hover ">
+  <thead>
+    <tr>
+      <th scope="col">Город</th>
+      <th scope="col">Средняя зарплата</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for key,value in city_salaries.items %}
+    <tr>
+      <th scope="row">{{ key }}</th>
+      <td>{{ value }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+
+<hr>
+<br>
+<table class="table table-hover ">
+  <thead>
+    <tr>
+      <th scope="col">Город</th>
+      <th scope="col">Количество вакансий</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for key,value in city_vacancies.items %}
+    <tr>
+      <th scope="row">{{ key }}</th>
+      <td>{{ value }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% include 'footer.html' %}
+{% endblock %}

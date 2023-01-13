@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block title %}
+Востребованность
+{% endblock %}
+
+{% block content %}
+{% include 'nav.html' %}
+<br>
+<h1 class="text-center">Динамика уровня заработной платы по годам</h1>
+<div>
+    <canvas id="generalsalarygraphic"></canvas>
+</div>
+<hr>
+<h1 class="text-center">Динамика количества вакансий по годам</h1>
+<div>
+    <canvas id="generalvacanciesgraphic"></canvas>
+</div>
+<br>
+<hr>
+<h1 class="text-center">Динамика уровня заработной платы Python программиста по годам</h1>
+<div>
+    <canvas id="pythonsalarygraphic"></canvas>
+</div>
+<br>
+<hr>
+<h1 class="text-center">Динамика количества вакансий Python программиста по годам</h1>
+<div>
+    <canvas id="pythonvacanciesgraphic"></canvas>
+</div>
+<script>
+(async function() {
+  const data = [
+  {% for key,value in information.items %}
+    { year: {{ key }}, count: {{  value }} },
+    {% endfor %}
+  ];
+
+  new Chart(
+    document.getElementById('generalsalarygraphic'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Средняя месячная зарплата',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+    }
+  );
+})();
+</script>
+
+<script>
+(async function() {
+  const data = [
+  {% for key,value in vacancies_information.items %}
+    { year: {{ key }}, count: {{  value }} },
+    {% endfor %}
+  ];
+
+  new Chart(
+    document.getElementById('generalvacanciesgraphic'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Вакансий',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+
+    }
+  );
+})();
+</script>
+
+
+<script>
+(async function() {
+  const data = [
+  {% for key,value in python_information.items %}
+    { year: {{ key }}, count: {{  value }} },
+    {% endfor %}
+  ];
+
+  new Chart(
+    document.getElementById('pythonsalarygraphic'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Средняя месячная зарплата',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+    }
+  );
+})();
+</script>
+
+<script>
+(async function() {
+  const data = [
+  {% for key,value in python_vacancies_information.items %}
+    { year: {{ key }}, count: {{  value }} },
+    {% endfor %}
+  ];
+
+  new Chart(
+    document.getElementById('pythonvacanciesgraphic'),
+    {
+      type: 'bar',
+      data: {
+        labels: data.map(row => row.year),
+        datasets: [
+          {
+            label: 'Вакансий',
+            data: data.map(row => row.count)
+          }
+        ]
+      }
+
+    }
+  );
+})();
+</script>
+{% include 'footer.html' %}
+{% endblock %}

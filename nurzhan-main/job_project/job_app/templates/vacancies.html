@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+    Вакансии
+{% endblock %}
+{% block content %}
+    {% include 'nav.html' %}
+    {% for vacancy in vacancies %}
+        <br>
+        <div class="container">
+            <div class="card text-right">
+                <div class="card-header">
+                    Вакансия {{ forloop.counter }}
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ vacancy.name }}</h5>
+                    <p class="card-text" style="list-style-type: none;">
+                        Навыки:
+                        {% for skill in vacancy.key_skills %}
+                            {{ skill.name }},
+                        {% endfor %}
+                        {{ vacancy.description|safe }}</p>
+                    {% if vacancy.salary.from != None %}
+                        <p class="card-text">Зарплата: {{ vacancy.salary.from }} рублей</p>
+                    {% else %}
+                        <p class="card-text">Зарплата: Не указана </p>
+                    {% endif %}
+                    <p class="card-text">Город: {{ vacancy.area.name }}</p>
+                    <p class="card-text">Компания: {{ vacancy.employer.name }}</p>
+
+                    <a href="{{ vacancy.alternate_url }}" class="btn btn-primary">Перейти к вакансии</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Дата: {{ vacancy.created_at|date:"d F Y (l)" }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <br>
+    {% include 'footer.html' %}
+{% endblock %}

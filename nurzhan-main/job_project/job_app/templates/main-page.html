@@ -1,0 +1,369 @@
+{% extends 'base.html' %}
+{% block title %}
+    Главная страница
+{% endblock %}
+{% block style %}
+    <style>
+        /* GLOBAL STYLES
+        -------------------------------------------------- */
+        /* Padding below the footer and lighter body text */
+
+        body {
+
+            padding-bottom: 3rem;
+            color: #5a5a5a;
+        }
+
+
+        /* CUSTOMIZE THE CAROUSEL
+        -------------------------------------------------- */
+
+        /* Carousel base class */
+        .carousel {
+            margin-bottom: 4rem;
+        }
+
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+            bottom: 3rem;
+            z-index: 10;
+        }
+
+        /* Declare heights because of positioning of img element */
+        .carousel-item {
+            height: 32rem;
+        }
+
+
+        /* MARKETING CONTENT
+        -------------------------------------------------- */
+
+        /* Center align the text within the three columns below the carousel */
+        .marketing .col-lg-4 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* rtl:begin:ignore */
+        .marketing .col-lg-4 p {
+            margin-right: .75rem;
+            margin-left: .75rem;
+        }
+
+        /* rtl:end:ignore */
+
+
+        /* Featurettes
+        ------------------------- */
+
+        .featurette-divider {
+            margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+        }
+
+        /* Thin out the marketing headings */
+        /* rtl:begin:remove */
+        .featurette-heading {
+            letter-spacing: -.05rem;
+        }
+
+        /* rtl:end:remove */
+
+        /* RESPONSIVE CSS
+        -------------------------------------------------- */
+
+        @media (min-width: 40em) {
+            /* Bump up size of carousel content */
+            .carousel-caption p {
+                margin-bottom: 1.25rem;
+                font-size: 1.25rem;
+                line-height: 1.4;
+            }
+
+            .featurette-heading {
+                font-size: 50px;
+            }
+        }
+
+        @media (min-width: 62em) {
+            .featurette-heading {
+                margin-top: 7rem;
+            }
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+
+    </style>
+{% endblock %}
+{% block content %}
+    {% include 'nav.html' %}
+    <main>
+
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="bd-placeholder-img" width="100%" height="100%"
+                         src="https://i.pinimg.com/originals/54/2c/8b/542c8b091f6c1bc3a8a1c33a71466521.jpg">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Профессия Python-разработчик</h1>
+                            <p>Python в тройке популярных и востребованных языков уже больше 5 лет, по данным ресурса
+                                для программистов Stackoverflow. И все потому, что он универсальный и простой.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="bd-placeholder-img" width="100%" height="100%"
+                         src="https://i.pinimg.com/originals/54/2c/8b/542c8b091f6c1bc3a8a1c33a71466521.jpg">
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Кто такой python разработчик?</h1>
+                            <p>Специалист, который создает программы разного назначения: клиент-серверы, игры,
+                                веб-приложения, сайты и боты. В основе его работы — Python. Это распространенный язык
+                                общего назначения, который легко понять, особенно после более сложных C++ и Java.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="bd-placeholder-img" width="100%" height="100%"
+                         src="https://i.pinimg.com/originals/54/2c/8b/542c8b091f6c1bc3a8a1c33a71466521.jpg">
+
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                            <h1>Востребованность профессии</h1>
+                            <p>Python применяется практически во всех областях разработки ПО. Особенно востребован для
+                                электронной коммерции, маркетинга и интернет-банкинга. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <!-- Marketing messaging and featurettes
+        ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+            <h2 class="text-center">Что делает Python программист</h2>
+            <br>
+            <br>
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         src="https://static.thenounproject.com/png/2017447-200.png">
+                    <h2 class="fw-normal">Автоматизирует передачу данных.</h2>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         src="https://icons.veryicon.com/png/o/internet--web/internet-simple-icon/api-management.png">
+                    <h2 class="fw-normal">Создает API интерфейсы</h2>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                         src="https://cdn-icons-png.flaticon.com/512/1674/1674868.png">
+                    <h2 class="fw-normal">Работает с протоколами HTTP и HTTPS</h2>
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <p class="lead">Какие нужны софт-скиллы
+                        <br>
+                        • самоорганизованность, умение контролировать себя, грамотно подходить к тайм-менеджменту;<br>
+                        • умение договариваться, идти на компромиссы и отстаивать свою точку зрения;<br>
+                        • способность грамотно излагать свои идеи;<br>
+                        • творческая жилка;<br>
+                        • умение подстраиваться под быстрый темп развития IT, оставаться в потоке;<br>
+                        • высокая обучаемость, стремление познавать новое;<br>
+                        • аккуратность и дотошность.<br>
+                        Основные требования<br>
+                        Что должен знать и уметь junior python-разработчик:<br>
+                        • составлять и читать ТЗ, знание специальной терминологии;<br>
+                        • читать чужой код;<br>
+                        • работать с фреймворками для веб-разработки;<br>
+                        • разбираться в математической статистике.<br>
+                        Плюсы и минусы профессии<br>
+                        Плюсы:<br>
+                        • язык программирования, который легко освоить самостоятельно;<br>
+                        • большое сообщество российских программистов;<br>
+                        • постоянный рост того, сколько зарабатывает программист python;<br>
+                        • востребованность на рынке труда.<br>
+                        Минусы:<br>
+                        • высокая конкуренция в этой области;<br>
+                        • необходимость развиваться и изучать другие языки.<br>
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img width="500px" height="500px"
+                         class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                         src="https://cdn-icons-png.flaticon.com/512/6171/6171939.png"
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading fw-normal lh-1">Как стать python разработчиком: <span
+                            class="text-muted"> где учиться и работать</span>
+                    </h2>
+                    <p class="lead">Вы легче освоитесь в профессии python-разработчик, если есть высшее образование
+                        программиста. Но в университете нужно тратить больше времени и изучать лишние предметы, которые
+                        не требуются на практике.
+                        Python можно за небольшой срок изучить на курсах. Онлайн-школы и университеты предлагают
+                        программы разработки для начинающих и опытных специалистов. Если вы новичок, лучше обратить
+                        внимание на курсы с нуля. А если уже знакомы с другими языками программирования, подойдет
+                        продвинутое обучение.
+                    </p>
+                </div>
+                <div class="col-md-5 order-md-1">
+
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                         src="https://learn.cognitioworld.com/wp-content/uploads/2021/02/python-development-service-banner.png">
+
+                </div>
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading fw-normal lh-1">Чем занимаются Python-разработчики</span>
+                    </h2>
+                    <p class="lead">Python применяется в разных сферах. Степень использования языка и набор навыков
+                        разработчика зависят от конкретной профессии и области применения. Например, Python активно
+                        используется в исследовательской деятельности при работе с данными. Для этих целей не нужно быть
+                        полноценным Python-разработчиком, достаточно знать необходимые для конкретных задач инструменты
+                        для расчетов и их автоматизации: библиотеки SciPy, NumPy, Pandas, Matplotlib и другие. Это же
+                        относится и к специалистам других областей, например тестировщикам, операторам станков ЧПУ,
+                        маркетологам, социологам и многим другим. Всю работу с любого рода данными можно так или иначе
+                        упростить и автоматизировать с помощью Python.
+
+                        Без базовых знаний Python сегодня не обойтись аналитикам данных. Для специалистов этой сферы не
+                        так важны знания сложных конструкций языка, сколько умение пользоваться его библиотеками
+                        (например, IPI, TensorFlow), максимально ясно и чисто писать код. А также дополнительные
+                        хард-навыки: знание линейной алгебры на уровне последнего класса математической школы или
+                        первого курса технического вуза, логики, теории вероятности и SQL — для написания запросов к
+                        базам данных.
+
+                        Более продвинутого уровня владения Python потребуют нейросети, объемы данных здесь существенно
+                        больше. Именно нейросетевые технологии стоят за системой рекомендаций для каждого пользователя в
+                        Netflix, Spotify и «Яндекс.Музыке». Чтобы сохранять высокую скорость обработки больших данных,
+                        разработчику необходимо уметь писать чистый код и знать, как его оптимизировать. Также
+                        потребуются знания более продвинутой математики — раздел матриц, математического анализа,
+                        структур матриц — и такие инструменты, как технология увеличения производительности программных
+                        систем JIT, библиотеки TensorFlow, Keras и PyTorch, а также плюсом будет знание языков
+                        программирования C++ и Java.
+
+                        Следующая сфера — бэкенд веб-приложений. На Python работает серверное обеспечение таких
+                        гигантов, как Google, Dropbox, Spotify, Netflix. Здесь в основном используются два фреймфорка,
+                        написанных на Python: Django, который позволяет писать сложные веб-приложения, а также
+                        микрофреймворк Flask. Дополнительные полезные для карьеры разработчика навыки включают базовое
+                        понимание работы фронтенда — языков JavaScript, CSS, HTML.
+
+                        И последняя сфера, на которой хотелось бы остановиться, — это робототехника. Операционная
+                        система ROS, которая является популярной для робототехнических систем, использует Python как
+                        один из основных языков. Здесь он помогает соединить части машины в одно целое. Также Python
+                        можно использовать для платформы быстрой разработки электронных устройств Arduino. Разработчики
+                        имеют знания в схемотехнике, а тем, кто занимается автономным движением и управлением
+                        манипуляторами, потребуется серьезный математический бэкграунд.
+
+                        Еще один вариант, как стать python разработчиком — освоить профессию самостоятельно. Python не
+                        требует знания сложных логарифмов, и даже человек, который далек от IT, сможет понять его.
+                        Главное, усидчивость и терпение. Начните с создания простых программ и постепенно растите как
+                        специалист.
+                        После обучения можно работать в одной из отраслей:
+                        <br>
+                        • в IT-компаниях по разработке сайтов, приложений, ПО, Data Science или Machine Learning; <br>
+                        • на интернет-порталах — Mail Group, Яндекс или Rambler; <br>
+                        • в финансовой сфере и банках; <br>
+                        • у интернет-провайдеров; <br>
+                        • в онлайн-сервисах доставки и такси; <br>
+                        • удаленных магазинах розничной торговли; <br>
+                        • в онлайн-университетах или агрегаторах курсов; <br>
+                        • в государственных организациях.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                         src="https://www.logicrays.com/images/hire-python-developer.png">
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+    {% include 'footer.html' %}
+{% endblock %}
